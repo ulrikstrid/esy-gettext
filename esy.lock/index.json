@@ -1,0 +1,55 @@
+{
+  "checksum": "14ee8a8a12a53ee34f044b532ef7f02c",
+  "root": "esy-gettext@link-dev:./package.json",
+  "node": {
+    "esy-help2man@github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443@d41d8cd9": {
+      "id":
+        "esy-help2man@github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443@d41d8cd9",
+      "name": "esy-help2man",
+      "version":
+        "github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "esy-gettext@link-dev:./package.json": {
+      "id": "esy-gettext@link-dev:./package.json",
+      "name": "esy-gettext",
+      "version": "link-dev:./package.json",
+      "source": {
+        "type": "link-dev",
+        "path": ".",
+        "manifest": "package.json"
+      },
+      "overrides": [],
+      "dependencies": [
+        "autoconf@github:esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "autoconf@github:esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01@d41d8cd9": {
+      "id":
+        "autoconf@github:esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01@d41d8cd9",
+      "name": "autoconf",
+      "version":
+        "github:esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "esy-help2man@github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443@d41d8cd9"
+      ],
+      "devDependencies": []
+    }
+  }
+}

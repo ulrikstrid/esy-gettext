@@ -1,0 +1,21 @@
+parameters:
+  host: ""
+  pool: ""
+  sign: false
+
+jobs:
+  - job: ${{ parameters.host }}
+    pool: ${{ parameters.pool }}
+    steps:
+      - ${{ if eq(parameters.host, 'Windows') }}:
+          - script: "npm install -g @esy-nightly/esy --unsafe-perm"
+            displayName: "Install esy"
+      - ${{ if ne(parameters.host, 'Windows') }}:
+          - script: "sudo npm install -g @esy-nightly/esy --unsafe-perm"
+            displayName: "Install esy"
+      - script: esy install
+        displayName: "esy install"
+      - script: "esy x which gettext"
+        displayName: "Checking binary..."
+      - script: "esy x which autopoint"
+        displayName: "Checking binary..."

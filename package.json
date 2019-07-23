@@ -1,0 +1,30 @@
+{
+  "name": "esy-gettext",
+  "version": "0.20.1000",
+  "description": "gettext-0.20.1 packaged for esy",
+  "esy": {
+    "buildsInSource": true,
+    "build": [
+      "find ./ -exec touch -t 200905010101 {} + ",
+      [
+        "bash",
+        "-c",
+        "./configure",
+        "--prefix=$cur__install",
+        "--disable-dependency-tracking",
+        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+      ],
+      [
+        "make"
+      ],
+      [
+        "make",
+        "install"
+      ]
+    ]
+  },
+  "dependencies": {
+    "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
+  },
+  "resolutions": {}
+}
