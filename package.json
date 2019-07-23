@@ -9,6 +9,30 @@
       [
         "bash",
         "-c",
+        "./gettext-runtime/configure",
+        "--prefix=$cur__install",
+        "--disable-dependency-tracking",
+        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+      ],
+      [
+        "bash",
+        "-c",
+        "./gettext-tools/configure",
+        "--prefix=$cur__install",
+        "--disable-dependency-tracking",
+        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+      ],
+      [
+        "bash",
+        "-c",
+        "./libtextstyle/configure",
+        "--prefix=$cur__install",
+        "--disable-dependency-tracking",
+        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+      ],
+      [
+        "bash",
+        "-c",
         "./configure",
         "--prefix=$cur__install",
         "--disable-dependency-tracking",
