@@ -7,17 +7,22 @@ jobs:
   - job: ${{ parameters.host }}
     pool: ${{ parameters.pool }}
     steps:
-      - ${{ if eq(parameters.host, 'Windows') }}:
-          - script: "npm install -g @esy-nightly/esy --unsafe-perm"
-            displayName: "Install esy"
-      - ${{ if ne(parameters.host, 'Windows') }}:
-          - script: "sudo npm install -g @esy-nightly/esy --unsafe-perm"
-            displayName: "Install esy"
+      - template: ./use-esy.yml
+      - script: mkdir -p test_dir
+        displayName: "make test dir"
+      - bash: |
+          echo '{"dependencies": {"gettext" : "ulrikstrid/esy-gettext:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+        displayName: 'create test package.json'
+        workingDirectory: test_dir
       - script: esy install
-        displayName: "esy install"
+        displayName: 'esy install'
+        workingDirectory: test_dir
       - script: esy build
-        displayName: "esy build"
+        displayName: 'esy build'
+        workingDirectory: test_dir
       - script: "esy x which gettext"
-        displayName: "Checking binary..."
+        displayName: "Checking binary"
+        workingDirectory: test_dir
       - script: "esy x which autopoint"
-        displayName: "Checking binary..."
+        displayName: "Checking binary autopoint"
+        workingDirectory: test_dir
