@@ -9,31 +9,42 @@
       [
         "./gettext-runtime/configure",
         "--disable-dependency-tracking",
-        "--prefix=$cur__install"
+        "--prefix=$cur__install",
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+        "#{os == 'windows' ? 'CC=x86_64-w64-mingw32-gcc' : ''}",
+        "#{os == 'windows' ? 'CXX=x86_64-w64-mingw32-g++' : ''}"
       ],
       [
         "./gettext-tools/examples/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
-        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+        "#{os == 'windows' ? 'CC=x86_64-w64-mingw32-gcc' : ''}",
+        "#{os == 'windows' ? 'CXX=x86_64-w64-mingw32-g++' : ''}"
       ],
       [
         "./gettext-tools/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
-        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+        "#{os == 'windows' ? 'CC=x86_64-w64-mingw32-gcc' : ''}",
+        "#{os == 'windows' ? 'CXX=x86_64-w64-mingw32-g++' : ''}"
       ],
       [
         "./libtextstyle/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
-        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+        "#{os == 'windows' ? 'CC=x86_64-w64-mingw32-gcc' : ''}",
+        "#{os == 'windows' ? 'CXX=x86_64-w64-mingw32-g++' : ''}"
       ],
       [
         "./configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
-        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+        "#{os == 'windows' ? 'CC=x86_64-w64-mingw32-gcc' : ''}",
+        "#{os == 'windows' ? 'CXX=x86_64-w64-mingw32-g++' : ''}"
       ],
       [
         "make"
