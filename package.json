@@ -7,40 +7,30 @@
     "build": [
       "find ./ -exec touch -t 200905010101 {} + ",
       [
-        "bash",
-        "-c",
         "./gettext-runtime/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
         "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
       ],
       [
-        "bash",
-        "-c",
         "./gettext-tools/examples/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
         "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
       ],
       [
-        "bash",
-        "-c",
         "./gettext-tools/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
         "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
       ],
       [
-        "bash",
-        "-c",
         "./libtextstyle/configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
         "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
       ],
       [
-        "bash",
-        "-c",
         "./configure",
         "--disable-dependency-tracking",
         "--prefix=$cur__install",
