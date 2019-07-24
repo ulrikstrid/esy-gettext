@@ -9,8 +9,7 @@
       [
         "./gettext-runtime/configure",
         "--disable-dependency-tracking",
-        "--prefix=$cur__install",
-        "#{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}"
+        "--prefix=$cur__install"
       ],
       [
         "./gettext-tools/examples/configure",
